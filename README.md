@@ -1,3 +1,4 @@
+# List of hacks:
 1. Locate a program file; following symbolic link
 2. Docker build and run on 8080 port
 3. Stop last run docker container
@@ -25,3 +26,4 @@
  - Usage: runningport <port number>
  - Needs `lsof` installed
  - Will ask for sudo password
+10. Show/Hide .dotfiles in MAC OS

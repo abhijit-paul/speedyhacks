@@ -56,3 +56,8 @@ alias savepaste="python ~/savepaste.py"
 #  Will ask for sudo password
 function runningport() {sudo lsof -i :$1}
 
+# MAC OS specific
+# Show/Hide .dotfile in Finder
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+

@@ -19,6 +19,13 @@ function docker_stop_last_container() {docker container stop $(docker ps -n1 | t
 #   Makes a head request to the file and gets the size in KB
 alias get_remote_file_size='python ~/get_remote_file_size.py'
 
+
+# Remove deleted branches from local
+# USAGE: remove_deleted_branches
+function remove_deleted_branches() {
+    git fetch -p && for branch in $(git branch -vv --no-color | grep ": gone]" | awk '{print $1}'); do git branch -D $branch; done
+}
+
 # Managing multiple git users in a single machine
 function my_commit() {git commit --author="<username> <email_id@domain.com>" -m $2}
 alias mycommit='my_commit'
@@ -60,4 +67,5 @@ function runningport() {sudo lsof -i :$1}
 # Show/Hide .dotfile in Finder
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
 

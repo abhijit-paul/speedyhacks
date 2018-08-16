@@ -68,4 +68,12 @@ function runningport() {sudo lsof -i :$1}
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-
+# Build and run a java file
+# Creates a build and runs it
+function javarun() {
+    filename="$1"
+    javac $filename || return;
+    ref=$(echo $filename | sed -e 's/.java//');
+    jar cfe build.jar $ref *.class;
+    java -jar build.jar
+}

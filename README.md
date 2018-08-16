@@ -29,3 +29,4 @@
  - Needs `lsof` installed
  - Will ask for sudo password
 11. Show/Hide .dotfiles in MAC OS
+12. Compile, build a jar and run it in a single command

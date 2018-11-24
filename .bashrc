@@ -1,3 +1,8 @@
+# Create and enter a directory
+function mkcddir() {
+ mkdir $1 && cd $_;
+}
+
 # Locate a program file; following symbolic link
 function ls_which() {
  ls -ltr $(which $1)

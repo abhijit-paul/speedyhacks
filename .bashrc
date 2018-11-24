@@ -1,6 +1,6 @@
 # Create and enter a directory
 function mkcddir() {
- mkdir $1 && cd $_;
+ mkdir -p $1 && cd $_;
 }
 
 # Locate a program file; following symbolic link
